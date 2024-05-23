@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+    <html>
+        <head>  
+            <title>Form Example</title>
+            <style>
+            body {
+     font-size:  14px;
+     font-family: arial ;
+}
+</style>
+        </head>
+       
+        <bodystyle="background-color:Grey;">
+            <h1>Funny story</h1>
+            <form name="myForm" method="get" id="myform">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name">
+               
+                 <label for="adj1">Name of Favorite car:</label>
+                <input type="text" id="adj1" name="adj1">
+               
+                 <label for="adj2">Why is it ur favorite car :</label>
+                <input type="text" id="adj2" name="adj2">
+               
+                
+               
+                 
+                <p></p>
+               
+                <p></p>
+               
+               
+                <input type="submit" value="Show story">
+            </form>
+            <!--This is where the story will go between the div-->
+            <div id="formContents"></div>
+            <script>
+            //get the form element
+            var form= document.getElementById("myform");
+           
+            //add event listener for form submission with button
+            form.addEventListener("submit", function(event){
+                event.preventDefault();
+                var name = document.getElementById("name").value;
+                var adj1 = document.getElementById("adj1").value;
+               var adj2 = document.getElementById("adj2").value;
+               
+                var putStory= document.getElementById("formContents");
+               
+                putStory.innerHTML ="There is a person named " + name + " their favorite car is a " + adj1 + " because " + adj2  + "."
+               
+            });
+            </script>
+       
+        </body>
+        </html>
